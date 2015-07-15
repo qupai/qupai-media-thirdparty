@@ -30,21 +30,10 @@ project(qupai-media-thirdparty)
 
 include( ExternalProject )
 
-# externalproject_add( 
-#   fdk-aac-project
-#   SOURCE_DIR $ENV{FDK_AAC_SOURCE_DIR}
-#   CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/Build.fdk-aac.android.sh
-#   TEST_BEFORE_INSTALL 0
-#   BUILD_IN_SOURCE 1
-#   BUILD_COMMAND make -j8
-#   INSTALL_COMMAND make install DESTDIR=${LIBRARY_INSTALL_DIR}
-# )
-
 externalproject_add( 
   fdk-aac-project
   SOURCE_DIR $ENV{FDK_AAC_SOURCE_DIR}
-  CONFIGURE_COMMAND cp ${CMAKE_SOURCE_DIR}/fdk-aac/CMakeLists.txt $ENV{FDK_AAC_SOURCE_DIR}
-  CMAKE_COMMAND cmake .
+  CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/Build.fdk-aac.android.sh
   TEST_BEFORE_INSTALL 0
   BUILD_IN_SOURCE 1
   BUILD_COMMAND make -j8
