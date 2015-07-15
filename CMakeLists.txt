@@ -61,8 +61,6 @@ externalproject_add(
   INSTALL_COMMAND make install DESTDIR=${LIBRARY_INSTALL_DIR}
 )
 
-set (QUPAI_SDK_LIB_DIR ${CMAKE_SOURCE_DIR})
-
 include_directories(${LIBRARY_INSTALL_DIR}/include)
 link_directories(${LIBRARY_INSTALL_DIR}/lib)
 
