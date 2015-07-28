@@ -44,7 +44,7 @@ externalproject_add(
   x264-project
   GIT_REPOSITORY https://github.com/qupai/x264.git
   CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/build/x264-project-prefix/src/x264-project/configure --prefix=/
-                                                    --cross-prefix=arm-linux-androideabi-
+                                                    --cross-prefix=${TOOLCHAIN_ROOT}/bin/arm-linux-androideabi-
                                                     --host=armv7-a-linux
                                                     --extra-cflags=-DANDROID
                                                     --extra-cflags=-gdwarf-2
@@ -74,7 +74,7 @@ externalproject_add(
   CONFIGURE_COMMAND ${CMAKE_SOURCE_DIR}/build/ffmpeg-project-prefix/src/ffmpeg-project/configure --prefix=/
                                                 --arch=armv7-a
                                                 --target-os=linux
-                                                --cross-prefix=arm-linux-androideabi-
+                                                --cross-prefix=${TOOLCHAIN_ROOT}/bin/arm-linux-androideabi-
                                                 --sysroot=${CMAKE_SYSROOT}
                                                 --extra-cflags=-DANDROID
                                                 --extra-cflags=-mfpu=vfpv3-d16
