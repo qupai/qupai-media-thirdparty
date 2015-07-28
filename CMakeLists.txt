@@ -36,7 +36,7 @@ externalproject_add(
   CONFIGURE_COMMAND cp ${CMAKE_SOURCE_DIR}/fdk-aac/CMakeLists.txt ${CMAKE_SOURCE_DIR}/build/fdk-aac-project-prefix/src/fdk-aac-project
   TEST_BEFORE_INSTALL 0
   BUILD_IN_SOURCE 1
-  BUILD_COMMAND /usr/bin/cmake . -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}/libs && make -j8
+  BUILD_COMMAND /usr/bin/cmake . -DFDK_AAC_SOURCE_DIR=${CMAKE_SOURCE_DIR}/build/fdk-aac-project-prefix/src/fdk-aac-project -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}/libs && make -j8
   INSTALL_COMMAND make install
 )
 
